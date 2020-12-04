@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  php:
+    container_name: php
+    environment:
+      SLACK_TOKEN: ${SLACK_TOKEN}
+      CHANNEL: ${CHANNEL}
+      DELETED_MEMBER_IDS: ${DELETED_MEMBER_IDS}
+    build:
+      context: .
+    working_dir: "/opt"
+    volumes:
+      - ".:/opt"
